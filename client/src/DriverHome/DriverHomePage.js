@@ -7,6 +7,7 @@ import ParkingSpaceDetail from '../containers/ParkingSpaceDetail';
 import SearchBar from '../containers/SearchBar';
 import {CreateVehicleForm} from '../VehicleForms';
 import PNavbar from '../components/ProtectedNavbar';
+import "./DriverHome.css";
 
 class DriverHomePage extends React.Component {
     

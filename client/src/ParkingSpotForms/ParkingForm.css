@@ -3,9 +3,10 @@
     margin-right: 20px;
 }
 
-@media screen and (max-width: 578px) {
+@media screen and (max-width: 720px) {
     .parking-form {
         padding: 5%;
         margin-right: 0px;
+        margin-left: 0px;
     }
 }

@@ -18,8 +18,8 @@ import { CreateVehicleForm } from '../VehicleForms';
 import { CreateParkingSpotForm } from '../ParkingSpotForms';
 import { Navbar } from '../components/Navbar';
 import Wrapper from '../components/Wrapper';
-import Footer from '../components/Footer';
 import  NotFound  from '../NotFound';
+import Footer from "../components/Footer";
 
 
 
@@ -64,6 +64,7 @@ class App extends React.Component {
             </Wrapper>
         </div> 
       </Router>
+      <Footer />
       </div>
     );
   }

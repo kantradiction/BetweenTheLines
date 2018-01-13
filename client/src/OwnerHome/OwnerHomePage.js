@@ -7,6 +7,7 @@ import { CreateParkingSpotForm } from '../ParkingSpotForms/CreateParkingSpotForm
 import ParkingSpaceDetail from '../containers/ParkingSpaceDetail';
 import ParkingSpaceList from '../containers/ParkingSpaceList';
 import PNavbar from "../components/ProtectedNavbar";
+import RentButton from "../components/RentButton";
 import Jumbotron from "../components/Jumbotron";
 import "./OwnerHome.css";
 
@@ -38,21 +39,24 @@ class OwnerHomePage extends React.Component {
         return (
             <div>
                 <PNavbar />
-                <div className="container-fluid">
+                <div className="container-fluid justify-content-center">
                     <Jumbotron>
-                        <div className="owner-cards row">
-                            <CreateParkingSpotForm />
-                                {this.state.ownerParkingSpots.map(ownerParkingSpot =>
-                                    <div className="card parking-cards col-sm-12 col-md-3">
-                                        <div className="parking-card-info">
-                                            <p key={ownerParkingSpot.availability}>Availability: {ownerParkingSpot.availability}</p>
-                                            <p key={ownerParkingSpot.street}>Street: {ownerParkingSpot.street}</p>
-                                            <p key={ownerParkingSpot.city}>City: {ownerParkingSpot.city}</p>
-                                            <p key={ownerParkingSpot.state}>State: {ownerParkingSpot.state}</p>
-                                            <p key={ownerParkingSpot.zip}>Zip: {ownerParkingSpot.zip}</p>
+                        <div className="content">
+                            <div className="owner-cards row">
+                                <CreateParkingSpotForm />
+                                    {this.state.ownerParkingSpots.map(ownerParkingSpot =>
+                                        <div className="card parking-cards col-sm-12 col-md-2">
+                                            <div className="parking-card-info">
+                                                <p key={ownerParkingSpot.availability}>Availability: {ownerParkingSpot.availability}</p>
+                                                <p key={ownerParkingSpot.street}>Street: {ownerParkingSpot.street}</p>
+                                                <p key={ownerParkingSpot.city}>City: {ownerParkingSpot.city}</p>
+                                                <p key={ownerParkingSpot.state}>State: {ownerParkingSpot.state}</p>
+                                                <p key={ownerParkingSpot.zip}>Zip: {ownerParkingSpot.zip}</p>
+                                                <RentButton />
+                                            </div>
                                         </div>
-                                    </div>
-                            )}
+                                )}
+                            </div>
                         </div>
                     </Jumbotron>
                 </div>

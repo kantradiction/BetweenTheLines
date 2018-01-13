@@ -1,5 +1,10 @@
-.container-fluid {
-    width: 95%;
+.content {
+    align-content: center;
+    padding-left: 25px;
+}
+
+body {
+    background-color: rgb(206, 178, 52);
 }
 
 .card {
@@ -8,6 +13,7 @@
     color: white;
     font-size: 20px;
     margin-right: 20px;
+    margin-bottom: 20px; 
 }
 
 .card:last-child {
@@ -16,6 +22,12 @@
     background:#2C2E2E;
     color: white;
     font-size: 20px;
+}
+
+@media screen and (max-width: 720px) {
+    .content {
+        padding-left: 0px;
+    }
 }
 
 @media screen and (max-width: 578px) {

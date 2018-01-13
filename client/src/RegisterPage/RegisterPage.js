@@ -10,6 +10,9 @@ import Jumbotron from '../components/Jumbotron';
 import axios from 'axios';
 import './form.css';
 import Navbar from '../components/Navbar';
+import background from "./background.jpg";
+import home from "./home.png";
+import './RegisterPage.css';
 
 
 class RegisterPage extends React.Component {
@@ -126,51 +129,57 @@ class RegisterPage extends React.Component {
             <div>
                 <Navbar />
                 <div className="container">
+                <img src={background} className="background-img"/>
                     <Jumbotron>
-                        <div className="col-md-6">
-                            <h2>Register to Rent Your Space</h2>
-                            <form name="form" onSubmit={this.handleSubmit}>
-                                <div className={'form-group' + (submitted && !user.firstName ? ' has-error' : '')}>
-                                    <label htmlFor="firstName">First Name</label>
-                                    <input type="text" className="form-control" name="firstName" value={user.firstName} onChange={this.handleChange} />
-                                    {submitted && !user.firstName &&
-                                        <div className="help-block">First Name is required</div>
-                                    }
-                                </div>
-                                <div className={'form-group' + (submitted && !user.lastName ? ' has-error' : '')}>
-                                    <label htmlFor="lastName">Last Name</label>
-                                    <input type="text" className="form-control" name="lastName" value={user.lastName} onChange={this.handleChange} />
-                                    {submitted && !user.lastName &&
-                                        <div className="help-block">Last Name is required</div>
-                                    }
-                                </div>
-                                <div className={'form-group' + (submitted && !user.email ? ' has-error' : '')}>
-                                    <label htmlFor="email">Email</label>
-                                    <input type="email" className="form-control" name="email" value={user.email} onChange={this.handleChange} />
-                                    {submitted && !user.email &&
-                                        <div className="help-block">Email is required</div>
-                                    }
-                                </div>
-                                <div className={'form-group' + (submitted && !user.password ? ' has-error' : '')}>
-                                    <label htmlFor="password">Password</label>
-                                    <input type="password" className="form-control" name="password" value={user.password} onChange={this.handleChange} />
-                                    {submitted && !user.password &&
-                                        <div className="help-block">Password is required</div>
-                                    }
+                        <div className="row">
+                            <div className="col-sm-12 col-md-6">
+                                <h2>Register to Rent Your Space</h2>
+                                <form name="form" onSubmit={this.handleSubmit}>
+                                    <div className={'form-group' + (submitted && !user.firstName ? ' has-error' : '')}>
+                                        <label htmlFor="firstName">First Name</label>
+                                        <input type="text" className="form-control" name="firstName" value={user.firstName} onChange={this.handleChange} />
+                                        {submitted && !user.firstName &&
+                                            <div className="help-block">First Name is required</div>
+                                        }
+                                    </div>
+                                    <div className={'form-group' + (submitted && !user.lastName ? ' has-error' : '')}>
+                                        <label htmlFor="lastName">Last Name</label>
+                                        <input type="text" className="form-control" name="lastName" value={user.lastName} onChange={this.handleChange} />
+                                        {submitted && !user.lastName &&
+                                            <div className="help-block">Last Name is required</div>
+                                        }
+                                    </div>
+                                    <div className={'form-group' + (submitted && !user.email ? ' has-error' : '')}>
+                                        <label htmlFor="email">Email</label>
+                                        <input type="email" className="form-control" name="email" value={user.email} onChange={this.handleChange} />
+                                        {submitted && !user.email &&
+                                            <div className="help-block">Email is required</div>
+                                        }
+                                    </div>
+                                    <div className={'form-group' + (submitted && !user.password ? ' has-error' : '')}>
+                                        <label htmlFor="password">Password</label>
+                                        <input type="password" className="form-control" name="password" value={user.password} onChange={this.handleChange} />
+                                        {submitted && !user.password &&
+                                            <div className="help-block">Password is required</div>
+                                        }
 
-                                </div>
-                                <div className="form-check form-check-inline user-option">
-                                        <input onChange={(e) => this.handleUserBtnChange(e)} className="form-check-input" type="radio" name="user-option" id="owner option1" value="owner" />
-                                            <label className="form-check-label" htmlFor="ownerRadio">Owner</label>
-                                        <input onChange={(e) => this.handleUserBtnChange(e)} className="form-check-input" type="radio" name="user-option" id="driver option2" value="driver" />
-                                                <label className="form-check-label" htmlFor="driverRadio">Driver</label>
-                                </div>                    
-                                <div className="form-group">
-                                    <button className="btn btn-primary">Register</button>
+                                    </div>
+                                    <div className="form-check form-check-inline user-option">
+                                            <input onChange={(e) => this.handleUserBtnChange(e)} className="form-check-input" type="radio" name="user-option" id="owner option1" value="owner" />
+                                                <label className="form-check-label" htmlFor="ownerRadio">Owner</label>
+                                            <input onChange={(e) => this.handleUserBtnChange(e)} className="form-check-input" type="radio" name="user-option" id="driver option2" value="driver" />
+                                                    <label className="form-check-label" htmlFor="driverRadio">Driver</label>
+                                    </div>                    
+                                    <div className="form-group">
+                                        <button className="btn btn-primary">Register</button>
 
-                                    <Link to="/LoginPage" className="btn btn-link">Cancel</Link>
-                                </div>
-                            </form>
+                                        <Link to="/LoginPage" className="btn btn-link">Cancel</Link>
+                                    </div>
+                                </form>
+                            </div>
+                            <div className="col-sm-12 col-md-6">
+                                <img src={home} className="img-responsive home"/>
+                            </div>
                         </div>
                     </Jumbotron>
                 </div>  
