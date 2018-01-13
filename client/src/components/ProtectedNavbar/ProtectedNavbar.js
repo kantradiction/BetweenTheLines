@@ -27,7 +27,7 @@ class PNavbar extends React.Component {
     render() {    
         return (
             <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-                <a className="navbar-brand brand" href="#">
+                <a className="navbar-brand brand" href="/">
                     <img src={logo} width="30" height="30" alt="" />
                     -tween The Lines
                 </a>

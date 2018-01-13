@@ -7,7 +7,7 @@ import logo from "./logo.png"
 // Depending on the current path, this component sets the "active" className on the appropriate navigation link item
 const Navbar = props =>
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a className="navbar-brand brand" href="#">
+        <a className="navbar-brand brand" href="/">
             <img src={logo} width="30" height="30" alt="" />
             -tween The Lines
         </a>

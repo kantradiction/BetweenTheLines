@@ -7,6 +7,9 @@ import { ownerActions } from '../actions'
 import { ownerLoginSuccess, ownerLoginFailure } from '../actions/owner-actions';
 import { history } from '../helpers';
 import axios from 'axios';
+import Jumbotron from "../components/Jumbotron";
+import background from "./background.jpg";
+import './Login.css';
 
 class OwnerLoginPage extends React.Component {
     constructor(props) {
@@ -76,27 +79,34 @@ class OwnerLoginPage extends React.Component {
         const { email, password, submitted } = this.state;
         return (
             <div>
-                <h2>Login</h2>
-                <form name="form" onSubmit={this.handleSubmit}>
-                    <div className={'form-group' + (submitted && !email ? ' has-error' : '')}>
-                        <label htmlFor="email">Email</label>
-                        <input type="text" className="form-control" name="email" value={email} onChange={this.handleChange} />
-                        {submitted && !email &&
-                            <div className="help-block">Email is required</div>
-                        }
+             <img src={background} className="background-img"/>
+                <Jumbotron >
+                    <div class="row justify-content-md-center">
+                        <div className="col-md-3">
+                            <h2>Login</h2>
+                            <form name="form" onSubmit={this.handleSubmit}>
+                                <div className={'form-group' + (submitted && !email ? ' has-error' : '')}>
+                                    <label htmlFor="email">Email</label>
+                                    <input type="text" className="form-control" name="email" value={email} onChange={this.handleChange} />
+                                    {submitted && !email &&
+                                        <div className="help-block">Email is required</div>
+                                    }
+                                </div>
+                                <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
+                                    <label htmlFor="password">Password</label>
+                                    <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
+                                    {submitted && !password &&
+                                        <div className="help-block">Password is required</div>
+                                    }
+                                </div>
+                                <div className="form-group">
+                                    <button className="btn btn-primary">Login</button>
+                                    <Link to="/register/owner" className="btn btn-link">Register</Link>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
-                        <label htmlFor="password">Password</label>
-                        <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
-                        {submitted && !password &&
-                            <div className="help-block">Password is required</div>
-                        }
-                    </div>
-                    <div className="form-group">
-                        <button className="btn btn-primary">Login</button>
-                        <Link to="/register/owner" className="btn btn-link">Register</Link>
-                    </div>
-                </form>
+                </Jumbotron>
             </div>
         );
     }
